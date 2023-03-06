@@ -17,7 +17,7 @@ namespace TesteAutoGlass.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<ActionResult> Salvar(ProdutoDTO produto)
+        public async Task<IActionResult> Salvar(ProdutoDTO produto)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace TesteAutoGlass.Controllers
         }
         [HttpPut]
         [Route("")]
-        public async Task<ActionResult> Atualizar(ProdutoDTO produto)
+        public async Task<IActionResult> Atualizar(ProdutoDTO produto)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace TesteAutoGlass.Controllers
         }
         [HttpDelete]
         [Route("")]
-        public async Task<ActionResult> Excluir(int codigo)
+        public async Task<IActionResult> Excluir(int codigo)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace TesteAutoGlass.Controllers
         }
         [HttpGet]
         [Route("{codigo}")]
-        public async Task<ActionResult> Obter(int codigo)
+        public async Task<IActionResult> Obter(int codigo)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace TesteAutoGlass.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<ActionResult> ObterTodos(PaginacaoProdutosDTO paginacaoProdutos)
+        public async Task<IActionResult> ObterTodos([FromQuery]PaginacaoProdutosDTO paginacaoProdutos)
         {
             try
             {

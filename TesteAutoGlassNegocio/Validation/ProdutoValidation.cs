@@ -10,14 +10,14 @@ namespace TesteAutoGlassNegocio.Validation
 {
     public class ProdutoValidation : AbstractValidator<ProdutoDTO>
     {
-        ProdutoValidation() 
+        public ProdutoValidation() 
         {
             ValidaDataFabricacaoMenorValidade();
         }
 
         public void ValidaDataFabricacaoMenorValidade()
         {
-            RuleFor(produto => produto.DataFabricacao).LessThanOrEqualTo(produto => produto.DataValidade).WithMessage("Data de Fabricação maior que a de validade");
+            RuleFor(produto => produto.DataFabricacao).LessThan(produto => produto.DataValidade).WithMessage("Data de Fabricação maior ou igual que a de validade");
         }
     }
 }

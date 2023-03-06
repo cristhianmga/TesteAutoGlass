@@ -16,9 +16,16 @@ namespace TesteAutoGlassPersistencia.Padrao
 
         public async Task<E> Salvar<E>(E entity) where E : class
         {
-            _context.Entry(entity).State = EntityState.Added;
-            await _context.SaveChangesAsync();
-            return entity;
+            try
+            {
+                _context.Entry(entity).State = EntityState.Added;
+                await _context.SaveChangesAsync();
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public async Task<E> Atualizar<E>(E entity) where E : class
         {

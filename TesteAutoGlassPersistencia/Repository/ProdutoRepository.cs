@@ -18,7 +18,7 @@ namespace TesteAutoGlassPersistencia.Repository
             Produto produto = await _padraoDB.Obter<Produto>(codigo);
             if (produto == null)
             {
-                throw new NullReferenceException();
+                throw new NullReferenceException("Produto não encontrado");
             }
             else
             {
@@ -55,7 +55,7 @@ namespace TesteAutoGlassPersistencia.Repository
 
         public async Task<IQueryable<Produto>> ObterTodos()
         {
-            IQueryable<Produto> produtos =  _padraoDB.ObterTodos<Produto>().Include("Fornecedor");
+            IQueryable<Produto> produtos =  _padraoDB.ObterTodos<Produto>();
             return produtos;
         }
     }

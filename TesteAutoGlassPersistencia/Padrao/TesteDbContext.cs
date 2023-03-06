@@ -10,7 +10,6 @@ namespace TesteAutoGlassPersistencia.Padrao
 
         }
 
-        public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Produto> Produtos { get; set; }
     }
 }
